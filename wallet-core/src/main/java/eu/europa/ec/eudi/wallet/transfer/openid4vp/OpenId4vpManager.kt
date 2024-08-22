@@ -341,9 +341,10 @@ class OpenId4vpManager(
                             verifier.clientId to PreregisteredClient(
                                 verifier.clientId,
                                 verifier.legalName,
-                                JWSAlgorithm.RS256 to JwkSetSource.ByReference(
+                                verifier.jwsAlgorithm to verifier.jwkSetSource
+                                /*JWSAlgorithm.RS256 to JwkSetSource.ByReference(
                                     URI("${verifier.verifierApi}/wallet/public-keys.json")
-                                )
+                                )*/
                             )
                         }
                     )
